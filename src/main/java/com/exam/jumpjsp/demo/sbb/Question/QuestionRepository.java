@@ -1,4 +1,4 @@
-package com.exam.jumpjsp.demo.sbb;
+package com.exam.jumpjsp.demo.sbb.Question;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
