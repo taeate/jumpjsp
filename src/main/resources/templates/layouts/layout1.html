@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:layout="http://www.ultrq.net.nz/thymeleaf/layout" >
-    
-    <head>
-        <meta charset="UTF-8">
-        <link th:href="@{/css/tailwind.output.css}" rel="stylesheet">
-    </head>
-    <body class="flex flex-col min-h-screen">
-        <div th:replace="fragments/header::header"></div>
-        <div layout:fragment="content" class="flex-1 dark:bg-gray-800 dark:text-gray-200"></div>
-        <div th:replace="fragments/footer::footer"></div>
-    </body>
+<html xmlns:layout="http://www.ultrq.net.nz/thymeleaf/layout" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/tailwind.output.css}" rel="stylesheet">
+</head>
+
+<body class="flex flex-col min-h-screen">
+    <div th:replace="fragments/header::header"></div>
+    <div layout:fragment="content" class="flex-1"></div>
+    <div th:replace="fragments/footer::footer"></div>
+    <script th:src="@{/js/common.js}"></script>
+</body>
+
 </html>

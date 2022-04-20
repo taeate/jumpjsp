@@ -1,8 +1,7 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
-  theme: {
-    extend: {},
-  },
+  theme: ["light", "dark", "halloween"],
+  
   plugins: [require("daisyui")],
   darkMode: 'class',
 }
