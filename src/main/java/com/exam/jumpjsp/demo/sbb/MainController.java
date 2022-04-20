@@ -11,4 +11,10 @@ public class MainController {
     public String showMain() {
         return "hi";
     }
+
+    @RequestMapping("/")
+    @ResponseBody
+    public String showRoot() {
+        return "ss";
+    }
 }
