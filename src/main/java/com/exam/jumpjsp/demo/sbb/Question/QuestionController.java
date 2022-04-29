@@ -2,12 +2,13 @@ package com.exam.jumpjsp.demo.sbb.Question;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import lombok.RequiredArgsConstructor;
 
@@ -19,9 +20,10 @@ public class QuestionController {
     private final QuestionService questionService;
 
     @GetMapping("/list")
-    public String showList(Model model) {
+    public String showList(Model model, @RequestParam(value = "page", defaultValue = "0") int page) {
 
-        List<QuestionDto> questionList = this.questionService.getList();
+        Page<Question> questionList = questionService.getList(page);
+
         model.addAttribute("questionList", questionList);
 
         return "question/list";
@@ -35,4 +37,5 @@ public class QuestionController {
         model.addAttribute("question", question);
         return "question/detail";
     }
+
 }
