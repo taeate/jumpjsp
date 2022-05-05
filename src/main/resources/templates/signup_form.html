@@ -1,18 +1,55 @@
 <html layout:decorate="~{layouts/layout1}">
 
 <div layout:fragment="content" class="container my-3">
-    <div class="my-3 border-bottom">
-        <div>
-            <h4>회원가입</h4>
+    <div class="hero min-h-screen">
+        <div class="hero-content flex-col lg:flex-row-reverse w-5/6 ml-6">
+
+            <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div class="card-body">
+                    <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
+
+                        <div class="form-control">
+                            <label for="username" class="label">
+                                <span class="label-text">ID</span>
+                            </label>
+                            <input autocomplete="off" type="text" th:field="*{username}" placeholder="사용하실 아이디를 입력해주세요."
+                                class="input input-bordered form-control">
+                        </div>
+                        <div class="form-control">
+                            <label th:for="password1" class="label">
+                                <span class="label-text">Password</span>
+                            </label>
+                            <input autocomplete="off" type="password" th:field="*{password1}"
+                                placeholder="사용하실 비밀번호를 입력해주세요." class="input input-bordered">
+                        </div>
+                        <div class="form-control">
+                            <label th:for="password2" class="label">
+                                <span class="label-text">Password check</span>
+                            </label>
+                            <input autocomplete="off" type="password" th:field="*{password2}" placeholder="비밀번호 확인"
+                                class="input input-bordered">
+                            <p th:if="${#fields.hasErrors('password2')}" th:errors="*{password2}"
+                                class="fieldError text-red-500 mt-2 ml-2">
+                            </p>
+                        </div>
+                        <div class="form-control">
+                            <label for="email" class="label">
+                                <span class="label-text">Email</span>
+                            </label>
+                            <input autocomplete="off" type="email" th:field="*{email}" placeholder="이메일을 입력해주세요."
+                                class="input input-bordered">
+                        </div>
+                        <div class="form-control mt-6">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-    <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
-        <!-- <ul>
-            <li th:each="e : ${#fields.detailedErrors()}" th:class="${e.global}? globalerr : fielderr">
-                <span th:text="${e.global}? '*' : ${e.fieldName}">The field name</span> |
-                <span th:text="${e.message}">The error message</span>
-            </li>
-        </ul> -->
+
+
+    <!-- <form th:action="@{/user/signup}" th:object="${userCreateForm}" method="post">
         <div class="mb-3">
             <label for="username" class="form-label">사용자ID</label>
             <input type="text" th:field="*{username}" class="form-control" />
@@ -30,7 +67,10 @@
             <input type="email" th:field="*{email}" class="form-control" />
         </div>
         <button type="submit" class="btn btn-primary">회원가입</button>
-    </form>
+    </form> -->
+
 </div>
+
+
 
 </html>
