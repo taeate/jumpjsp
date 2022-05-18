@@ -2,6 +2,8 @@ package com.exam.jumpjsp.demo.sbb.Question;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +30,12 @@ public class QuestionController {
 
         return "question/list";
     }
+
+    @GetMapping("/create")
+    public String showWrite(){
+        return "question_form";
+    }
+
 
     @GetMapping("/question/detail/{id}")
     public String showDetail(Model model, @PathVariable("id") Integer id) {

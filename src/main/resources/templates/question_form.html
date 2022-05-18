@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns:layout="http://www.ultrq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/layout1}">
+<div layout:fragment="content">
+    <img class="w-full h-96 absolute" src="https://lh3.googleusercontent.com/zPaq0vlXJiNzYfX0a6BdxxLcBVVNVCdWi5_AJPDC5U3iU4ULEcGvV40YFgsov6e0KSSpfKJ6UjB32npjleZB8GTpRZ7wW-upJi3c0smLSh9pnKpZNHk4gg3nfEScbWks58buEUql_B64_47-0NmNomHJYFpygcqdRLfx5Q_EPl3fB2CEpVWYY2OpkmRrN7TRoz9hLt7b8MHhwL8AuRxQBT97V0JOAYgcqMw1PT-t2zlYPON3OOEzJS-5wZMRx7NilZ7KLo9_vetNAdQR6VMA2VPIA1pkOzH_V3uEYMvmLemNZfUZFbk6niUSBV84XULO0avUSsbfcBBwuRtNRt57E9VXXDhFOcu4Pbzm0LJSxneoFUW1-vVK4IKvTbgArslfPF-HAHfIrSZALqoK9s3kPpfTkDQj8qiGyUyyN6cR3Jv06lyebjGPSusvlGzznlyqFVEJ0AqQR5klfvXKILf564UhTFkaY5FSuKoHk5GpYbnvzZVmaslLHCZ15y01ba7mmWq-x3qCzmh38meaJCMkIiy7U5iZ3D3-dYr4cOYfGcY6I8oP_WCjRNz7y-Z4Rkqq9bUyR_xX9NOgURWpVfnFQmbPn9PQre09daH12rkqdt8QypCzcuaJ-ZFqFEnqLiYCBGafvQz-ykMPN-LByIFBXgC26_Y8BIY2XPj-ckbLu86OlgwwGOYeUdUMsDElKuDVPQFKoX847WZ0m5QX0ixKyu75oAwA8bE5MdOTzI9eiVR_7wOCvYJrM8J3gH8rbQ=w1741-h979-no?authuser=0" alt="">
+    <div class="card w-1/2 bg-base-100 shadow-xl relative m-auto mt-10">
+        <div class="card-body text-center">
+          <div class="card-title m-auto">글쓰기</div>
+          <form th:action="@{/article/create}" method="post" class="mt-4">
+            <div class="mb-3">
+                <label for="subject" class="form-label"></label>
+                <input type="text" placeholder="제목을 입력해주세요." class="input input-bordered input-primary w-full max-w-xs" />
+            </div>
+            <div>
+                <textarea class="textarea textarea-primary" placeholder="내용을 입력해주세요." cols="80" rows="10"></textarea>
+            </div>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">
+                <input type="submit" value="저장하기">
+            </button>
+            </form>
+        </div>
+    </div>
+    
+</div>
+
+</html>
