@@ -13,8 +13,7 @@ public class MainController {
     }
 
     @RequestMapping("/")
-    @ResponseBody
     public String showRoot() {
-        return "ss";
+        return "fragments/main";
     }
 }
