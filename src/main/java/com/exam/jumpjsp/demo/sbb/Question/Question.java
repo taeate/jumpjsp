@@ -12,9 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.exam.jumpjsp.demo.sbb.Answer.Answer;
-import com.fasterxml.jackson.annotation.JsonFormat;
-
-import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.Getter;
 import lombok.Setter;
